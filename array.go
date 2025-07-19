@@ -1,0 +1,42 @@
+package main
+
+import "fmt"
+
+func main() {
+
+    var a [5]int
+    fmt.Println("emp:", a)
+	//0,0,0,0,0
+
+    a[4] = 100
+    fmt.Println("set:", a)
+	//0,0,0,0,100
+    fmt.Println("get:", a[4])
+	//100
+
+    fmt.Println("len:", len(a))
+	//5
+
+    b := [5]int{1, 2, 3, 4, 5}
+    fmt.Println("dcl:", b) //1,2,3,4,5
+
+    b = [...]int{1, 2, 3, 4, 5}//1,2,3,4,5
+    fmt.Println("dcl:", b)
+
+    b = [...]int{100,2:500, 3: 400, 500}
+    fmt.Println("idx:", b)
+
+    var twoD [2][3]int
+    for i := range 2 {
+        for j := range 3 {
+            twoD[i][j] = i + j
+        }
+    }
+    fmt.Println("2d: ", twoD)
+
+    twoD = [2][3]int{
+        {1, 2, 3},
+        {1, 2, 3},
+    }
+    fmt.Println("2d: ", twoD)
+}
